@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+/*
+ * @package     Intelipost_Pickup
+ * @copyright   Copyright (c) 2016 Gamuza Technologies (http://www.gamuza.com.br/)
+ * @author      Eneias Ramos de Melo <eneias@gamuza.com.br>
+ */
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/pickup/list" method="GET">
+        <service class="Intelipost\Pickup\Api\ItemsInterface" method="getList" />
+        <resources>
+            <resource ref="Intelipost_Pickup::items" />
+        </resources>
+    </route>
+    <route url="/V1/pickup/info/:id" method="GET">
+        <service class="Intelipost\Pickup\Api\ItemsInterface" method="getInfo" />
+        <resources>
+            <resource ref="Intelipost_Pickup::items" />
+        </resources>
+    </route>
+    <route url="/V1/pickup/save" method="POST">
+        <service class="Intelipost\Pickup\Api\ItemsInterface" method="saveItem" />
+        <resources>
+            <resource ref="Intelipost_Pickup::items" />
+        </resources>
+    </route>
+    <route url="/V1/pickup/delete/:id" method="DELETE">
+        <service class="Intelipost\Pickup\Api\ItemsInterface" method="deleteItem" />
+        <resources>
+            <resource ref="Intelipost_Pickup::items" />
+        </resources>
+    </route>
+    <route url="/V1/istores/list" method="GET">
+        <service class="Intelipost\Pickup\Api\StoresInterface" method="getList" />
+        <resources>
+            <resource ref="Intelipost_Pickup::istores" />
+        </resources>
+    </route>
+    <route url="/V1/istores/info/:id" method="GET">
+        <service class="Intelipost\Pickup\Api\StoresInterface" method="getInfo" />
+        <resources>
+            <resource ref="Intelipost_Pickup::istores" />
+        </resources>
+    </route>
+    <route url="/V1/istores/save" method="POST">
+        <service class="Intelipost\Pickup\Api\StoresInterface" method="saveItem" />
+        <resources>
+            <resource ref="Intelipost_Pickup::istores" />
+        </resources>
+    </route>
+    <route url="/V1/istores/delete/:id" method="DELETE">
+        <service class="Intelipost\Pickup\Api\StoresInterface" method="deleteItem" />
+        <resources>
+            <resource ref="Intelipost_Pickup::istores" />
+        </resources>
+    </route>
+</routes>
+

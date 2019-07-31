@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+/*
+ * @package     Intelipost_Pickup
+ * @copyright   Copyright (c) 2016 Gamuza Technologies (http://www.gamuza.com.br/)
+ * @author      Eneias Ramos de Melo <eneias@gamuza.com.br>
+ */
+-->
+
+<config>
+    <menu>
+        <add id="Intelipost_Pickup::manager" title="Pickup" module="Intelipost_Pickup" sortOrder="10"  parent="Intelipost_Basic::intelipost" resource="Intelipost_Pickup::manager" />
+        <add id="Intelipost_Pickup::istores" title="Stores" module="Intelipost_Pickup" sortOrder="10"  parent="Intelipost_Pickup::manager"   resource="Intelipost_Pickup::istores" action="intelipost_pickup/stores/index" />
+        <add id="Intelipost_Pickup::items"   title="Items"  module="Intelipost_Pickup" sortOrder="20"  parent="Intelipost_Pickup::manager"   resource="Intelipost_Pickup::items"   action="intelipost_pickup/items/index" />
+    </menu>
+</config>
+

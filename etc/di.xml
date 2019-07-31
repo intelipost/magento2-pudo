@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+/*
+ * @package     Intelipost_Pickup
+ * @copyright   Copyright (c) 2016 Gamuza Technologies (http://www.gamuza.com.br/)
+ * @author      Eneias Ramos de Melo <eneias@gamuza.com.br>
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Intelipost\Pickup\Model\Resource\Stores\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">intelipost_pickup_stores</argument>
+            <argument name="resourceModel" xsi:type="string">Intelipost\Pickup\Model\Resource\Stores</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="intelipost_pickup_stores_grid_data_source" xsi:type="string">Intelipost\Pickup\Model\Resource\Stores\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Intelipost\Pickup\Model\Resource\Items\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">intelipost_pickup_items</argument>
+            <argument name="resourceModel" xsi:type="string">Intelipost\Pickup\Model\Resource\Items</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="intelipost_pickup_items_grid_data_source" xsi:type="string">Intelipost\Pickup\Model\Resource\Items\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Intelipost\Pickup\Api\ItemsInterface"  type="Intelipost\Pickup\Model\Items" />
+    <preference for="Intelipost\Pickup\Api\StoresInterface" type="Intelipost\Pickup\Model\Stores" />
+</config>
+

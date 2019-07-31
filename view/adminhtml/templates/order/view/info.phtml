@@ -1,0 +1,57 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $block \Magento\Shipping\Block\Adminhtml\View */ ?>
+<?php $order = $block->getOrder() ?>
+<?php if ($order->getIsVirtual()) : return '';endif; ?>
+
+<?php /* Shipping Method */ ?>
+<div class="admin__page-section-item order-shipping-method">
+    <div class="admin__page-section-item-title">
+        <span class="title"><?= /* @escapeNotVerified */ __('Shipping &amp; Handling Information') ?></span>
+    </div>
+    <div class="admin__page-section-item-content">
+        <?php  if ($order->getTracksCollection()->count()) : ?>
+            <p><a href="#" id="linkId" onclick="popWin('<?= /* @escapeNotVerified */ $this->helper('Magento\Shipping\Helper\Data')->getTrackingPopupUrlBySalesModel($order) ?>','trackorder','width=800,height=600,resizable=yes,scrollbars=yes')" title="<?= /* @escapeNotVerified */ __('Track Order') ?>"><?= /* @escapeNotVerified */ __('Track Order') ?></a></p>
+        <?php endif; ?>
+        <?php if ($order->getShippingDescription()): ?>
+            <strong><?= $block->escapeHtml($order->getShippingDescription()) ?></strong>
+
+            <?php if ($this->helper('Magento\Tax\Helper\Data')->displayShippingPriceIncludingTax()): ?>
+                <?php $_excl = $block->displayShippingPriceInclTax($order); ?>
+            <?php else: ?>
+                <?php $_excl = $block->displayPriceAttribute('shipping_amount', false, ' '); ?>
+            <?php endif; ?>
+            <?php $_incl = $block->displayShippingPriceInclTax($order); ?>
+
+            <?= /* @escapeNotVerified */ $_excl ?>
+            <?php if ($this->helper('Magento\Tax\Helper\Data')->displayShippingBothPrices() && $_incl != $_excl): ?>
+                (<?= /* @escapeNotVerified */ __('Incl. Tax') ?> <?= /* @escapeNotVerified */ $_incl ?>)
+            <?php endif; ?>
+        <?php else: ?>
+            <?= /* @escapeNotVerified */ __('No shipping information available') ?>
+        <?php endif; ?>
+    </div>
+    <div class="order-pickup">
+        <?php
+            $pickupQuote    = json_decode($order->getIntelipostQuote());
+            $nameStore      = $pickupQuote->content->name;
+            $idStore        = $pickupQuote->content->id;
+            $numbStore      = $pickupQuote->content->location->number;
+            $streetStore    = $pickupQuote->content->location->street;
+            $adInfo         = $pickupQuote->content->location->additional_information;
+            $quarter        = $pickupQuote->content->location->quarter;
+            $city           = $pickupQuote->content->location->city;
+            $state          = $pickupQuote->content->location->state_code;
+        ?>
+        <p><?php echo __('Name')?>: <?php echo $nameStore?></p>
+        <p><?php echo $streetStore?>, <?php echo $numbStore?>, <?php echo $quarter?>,
+        <?php echo $adInfo?>, <?php echo $city?>, <?php echo $state?></p>
+    </div>
+</div>

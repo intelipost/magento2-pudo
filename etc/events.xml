@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+/*
+ * @package     Intelipost_Pickup
+ * @copyright   Copyright (c) 2016 Gamuza Technologies (http://www.gamuza.com.br/)
+ * @author      Eneias Ramos de Melo <eneias@gamuza.com.br>
+ */
+-->
+
+<config>
+    <event name="sales_order_load_after">
+        <observer name="intelipost_pickup_load_sales_order" instance="Intelipost\Pickup\Observer\Sales\OrderLoadAfter" />
+    </event>
+    <event name="sales_order_save_after">
+        <observer name="intelipost_pickup_save_sales_order" instance="Intelipost\Pickup\Observer\Sales\OrderSaveAfter" />
+    </event>
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="intelipost_pickup_save_sales_quote" instance="Intelipost\Pickup\Observer\Sales\SavePickupToOrderObserver"/>
+    </event>
+
+</config>
+
