@@ -41,17 +41,21 @@
     <div class="order-pickup">
         <?php
             $pickupQuote    = json_decode($order->getIntelipostQuote());
-            $nameStore      = $pickupQuote->content->name;
-            $idStore        = $pickupQuote->content->id;
-            $numbStore      = $pickupQuote->content->location->number;
-            $streetStore    = $pickupQuote->content->location->street;
-            $adInfo         = $pickupQuote->content->location->additional_information;
-            $quarter        = $pickupQuote->content->location->quarter;
-            $city           = $pickupQuote->content->location->city;
-            $state          = $pickupQuote->content->location->state_code;
+            if(!empty($pickupQuote->content->name)) :
+                $nameStore      = $pickupQuote->content->name;
+                $idStore        = $pickupQuote->content->id;
+                $numbStore      = $pickupQuote->content->location->number;
+                $streetStore    = $pickupQuote->content->location->street;
+                $adInfo         = $pickupQuote->content->location->additional_information;
+                $quarter        = $pickupQuote->content->location->quarter;
+                $city           = $pickupQuote->content->location->city;
+                $state          = $pickupQuote->content->location->state_code;
+
+
         ?>
         <p><?php echo __('Name')?>: <?php echo $nameStore?></p>
         <p><?php echo $streetStore?>, <?php echo $numbStore?>, <?php echo $quarter?>,
         <?php echo $adInfo?>, <?php echo $city?>, <?php echo $state?></p>
+        <?php endif; ?>
     </div>
 </div>
