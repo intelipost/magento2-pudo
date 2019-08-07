@@ -1,4 +1,4 @@
-# Manual de Uso: Módulo Pickup Intelipost
+# Manual de Uso: Módulo Pudo Intelipost
 
 [![logo](https://image.prntscr.com/image/E8AfiBL7RQKKVychm7Aubw.png)](http://www.intelipost.com.br)
 
