@@ -2,8 +2,8 @@
 <!--
 /*
  * @package     Intelipost_Pickup
- * @copyright   Copyright (c) 2016 Gamuza Technologies (http://www.gamuza.com.br/)
- * @author      Eneias Ramos de Melo <eneias@gamuza.com.br>
+ * @copyright   Copyright (c) 2019 Intelipost (http://www.intelipost.com.br/)
+ * @author      Israel Guido <israelguido@gmail.com>
  */
 -->
 
@@ -36,5 +36,6 @@
     </type>
     <preference for="Intelipost\Pickup\Api\ItemsInterface"  type="Intelipost\Pickup\Model\Items" />
     <preference for="Intelipost\Pickup\Api\StoresInterface" type="Intelipost\Pickup\Model\Stores" />
+    <preference for="Intelipost\Quote\Model\Carrier\Intelipost" type="Intelipost\Pickup\Model\Carrier\RewriteIntelipost" />
 </config>
 
