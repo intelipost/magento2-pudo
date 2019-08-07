@@ -22,7 +22,7 @@ Navegue até o diretório raíz da sua instalação do Magento 2 e execute os se
 
 
 ```
-bin/composer require intelipost/magento2-pickup  // Faz a requisição do módulo da Intelipost
+bin/composer require intelipost/magento2-pudo  // Faz a requisição do módulo da Intelipost
 bin/magento module:enable Intelipost_Pickup      // Ativa o módulo
 bin/magento setup:upgrade                        // Registra a extensão
 bin/magento setup:di:compile                     // Recompila o projeto Magento
