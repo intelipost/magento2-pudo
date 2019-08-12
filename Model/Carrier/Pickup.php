@@ -82,13 +82,22 @@ class Pickup
         $nearst = json_decode($this->_helper->apiRequest('GET', self::API_METHOD.$query));
 
         if(!empty($nearst->content->items[0])) {
+
             $namePickup = $nearst->content->items[0]->name;
 
             $result = $this->_rateResultFactory->create();
 
             if ($reqPickup['delivery_method_type'] == 'PICKUP') {
 
-                $methodTitle = $namePickup . " - " . __('days to deliver') . " : " . $reqPickup['delivery_estimate_business_days'];
+                if(strpos($_SERVER['HTTP_REFERER'],'checkout')){
+
+                    $methodTitle = $carrierTitle . " - " . __('days to deliver') . " : " . $reqPickup['delivery_estimate_business_days'];
+
+                } else {
+
+                    $methodTitle = $namePickup . " - " . __('days to deliver') . " : " . $reqPickup['delivery_estimate_business_days'];
+
+                }
 
                 $method = $this->_rateMethodFactory->create();
                 $method->setCarrier($this->_code);

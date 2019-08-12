@@ -24,7 +24,7 @@ define([
             shippingRates.valueHasMutated();
             checkoutDataResolver.resolveShippingRates(ratesData);
 
-            var postcode = jQuery('input[name="postcode"]').val("");
+            //var postcode = jQuery('input[name="postcode"]').val("");
 
             jQuery("#block-custom-intelipost").css('display', 'none');
 
