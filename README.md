@@ -5,13 +5,9 @@
 ## Introdução
 
 O módulo Pickup é uma extensão do módulo Intelipost Quote que acrescenta a funcionalidade de **Retirada na Loja** no momento do cálculo do frete.
-A consulta do frete é feita na [API Intelipost](https://docs.intelipost.com.br/v1/cotacao/criar-cotacao-por-produto) e a consulta do mapa com a localização da loja é feita na [API do Google](https://developers.google.com/maps/?hl=pt-br). Portanto, se faz necessário uma chave de autenticação e permissão para os dois casos.
-
-Este manual foi divido em três partes:
+A consulta do frete é feita na [API Intelipost](https://docs.intelipost.com.br/v1/cotacao/criar-cotacao-por-produto).
 
   - [Instalação](#instalação): Onde você econtrará instruções para instalar nosso módulo.
-  - [Configurações](#configurações): Onde você encontrará o caminho para realizar as configurações e explicações de cada uma delas.
-  - [Uso](#uso): Onde você encontrará a maneira de utilização de cada uma das funcionalidades.
 
 ## Instalação
 > É recomendado que você tenha um ambiente de testes para validar alterações e atualizações antes de atualizar sua loja em produção.
