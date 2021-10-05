@@ -12,7 +12,7 @@
 
 # :rocket: magento-pudo-v2
 
-Plugin de Pudo no Magento v1.
+Plugin de Pudo no Magento v2.
 
 ## Squad
 Conectividade
@@ -38,7 +38,7 @@ As instruções a seguir irão lhe proporcionar uma cópia deste projeto e de co
 ### Documentação
 
 Você pode descobrir mais sobre a aplicação através do nosso Confluence ou Swagger
-* [Confluence](https://esprinter.atlassian.net/wiki/spaces/IN/pages/7957610720/Notification+Conversor)
+* [Confluence](https://esprinter.atlassian.net/wiki/spaces/IN/pages/7957840029/Magento+Pudo+v2)
 * [Swagger]()
 
 ### Pré-requisitos
